@@ -1,0 +1,25 @@
+
+
+homoglyphs = {}
+homoglyphs['K'] = "|<"
+homoglyphs['A'] = "4"
+homoglyphs['I'] = "1"
+homoglyphs['B'] = "|3"
+def getSubstring(s, start, end):
+	new_s = ""
+for i in range(start, end):
+	new_s += s[i]
+return new_s
+def replaceWithHomoglyphs(s, letters):
+	for i in range(len(letters)):
+		if letters[i] in homoglyphs:
+			for j in range(len(s)):
+				if letters[i] == s[j]:
+					print("Replacing %s with %s" %(letters[i], homoglyphs[letters[i]]))
+s = getSubstring(s, 0, j) + homoglyphs[letters[i]] + getSubstring(s, j+1, len(s))
+else:
+print("This program cannot translate the letter %s" %letters[i])
+return s
+s = raw_input("Enter a string: ") 
+letters = raw_input("Enter a string of letters: ") 
+print("The translated string is : " + replaceWithHomoglyphs(s, letters))
